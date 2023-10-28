@@ -9,7 +9,7 @@ Os textos elaborados com IA Generativa são criados por meio de técnicas de pro
 Use o gerenciados de pacotes [pip](https://pip.pypa.io/en/stable/) para instalar as dependências.
 
 ```bash
-pip install requirements
+pip install -r requirements
 ```
 Crie um arquivo .env e adicione as variáveis de ambiente:
 ```bash
