@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Olá, meu nome é {{ nome }}</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .header {
+      background-color: #007bff;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    .content {
+      margin: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Olá, meu nome é {{ nome }}</h1>
+  </div>
+  <div class="content container">
+    <h2>Resumo</h2>
+    <p>{{ resume }}</p>
+    <ul>
+      <li>
+        <label>Nome:</label> {{ nome }}
+      </li>
+      <li>
+        <label>Idade:</label> {{ idade }} anos
+      </li>
+      <li>
+        <label>E-mail:</label> {{ email }}
+      </li>
+      <li>
+        <label>Telefone:</label> {{ telefone }}
+      </li>
+    </ul>
+
+    <h2>Objetivo Profissional:</h2>
+    <ul>
+      <li>
+        {{ goals }}
+      </li>
+    </ul>
+
+    <h2>Formação</h2>
+    <ul>
+      <li>
+        <label>Escolaridade:</label> {{ escolaridade }}
+      </li>
+      <li>
+        <label>Instituição:</label> {{ institution }}
+      </li>
+    </ul>
+
+    <h2>Competências</h2>
+    <ul>
+      <li>
+        {{ competencias }}
+      </li>
+    </ul>
+
+  </div>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
