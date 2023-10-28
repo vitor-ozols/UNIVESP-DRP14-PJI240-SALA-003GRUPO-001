@@ -50,7 +50,12 @@ def get_recoommendations():
     session['qualidades'] = request.form.get('mensagem')
 
     # abre o arquivo com o prompt e substitui as variaveis
-    prompt = open(f'{request.path}/prompts/get_qualifications.txt', encoding='utf-8').read()
+    # necessidade block try except por bug no pythoanywhere
+    try:
+        prompt = open(f'prompts/get_qualifications.txt', encoding='utf-8').read()
+    except:
+        prompt = open(f'pi2/prompts/get_qualifications.txt', encoding='utf-8').read()
+
     prompt = prompt.format(qualidades=session.get('qualidades'))
 
     # faz requisção pegando possíveis qualificações profissionais
@@ -76,7 +81,13 @@ def cv_maker():
     competencias_selecionadas = request.form.getlist('competencias')
     competencias_string = ', '.join(competencias_selecionadas)
 
-    prompt = open(f'{request.path}/prompts/cv_maker.txt', encoding='utf-8').read()
+    # abre o arquivo com o prompt e substitui as variaveis
+    # necessidade block try except por bug no pythoanywhere
+    try:
+        prompt = open(f'prompts/cv_maker.txt', encoding='utf-8').read()
+    except:
+        prompt = open(f'pi2/prompts/cv_maker.txt', encoding='utf-8').read()
+
     prompt = prompt.format(nome=nome,
                            idade=idade,
                            escolaridade=escolaridade,
