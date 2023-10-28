@@ -50,7 +50,7 @@ def get_recoommendations():
     session['qualidades'] = request.form.get('mensagem')
 
     # abre o arquivo com o prompt e substitui as variaveis
-    prompt = open('prompts/get_qualifications.txt', encoding='utf-8').read()
+    prompt = open(f'{os.getcwd()}/prompts/get_qualifications.txt', encoding='utf-8').read()
     prompt = prompt.format(qualidades=session.get('qualidades'))
 
     # faz requisção pegando possíveis qualificações profissionais
@@ -76,7 +76,7 @@ def cv_maker():
     competencias_selecionadas = request.form.getlist('competencias')
     competencias_string = ', '.join(competencias_selecionadas)
 
-    prompt = open('prompts/cv_maker.txt', encoding='utf-8').read()
+    prompt = open(f'{os.getcwd()}/prompts/cv_maker.txt', encoding='utf-8').read()
     prompt = prompt.format(nome=nome,
                            idade=idade,
                            escolaridade=escolaridade,
