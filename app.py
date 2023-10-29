@@ -10,13 +10,18 @@ import uuid
 import ast
 import json
 
+#
+#app.config['MYSQL_HOST'] = 'tws_bd.mysql.dbaas.com.br'
+#app.config['MYSQL_USER'] = 'tws_bd'
+#app.config['MYSQL_PASSWORD'] = os.getenv('PI_DB_PASSWORD')
+#app.config['MYSQL_DB'] = 'tws_bd'
 
 load_dotenv()
 app = Flask(__name__)
-app.config['MYSQL_HOST'] = 'tws_bd.mysql.dbaas.com.br'
-app.config['MYSQL_USER'] = 'tws_bd'
-app.config['MYSQL_PASSWORD'] = os.getenv('PI_DB_PASSWORD')
-app.config['MYSQL_DB'] = 'tws_bd'
+app.config['MYSQL_HOST'] = 'curric1.mysql.pythonanywhere-services.com'
+app.config['MYSQL_USER'] = 'curric1'
+app.config['MYSQL_PASSWORD'] = os.getenv('MYSQL_PASSWORD_PW')
+app.config['MYSQL_DB'] = 'curric1$defaultd'
 mysql = MySQL(app)
 openai.api_key = os.getenv('OPENIA_KEY')
 app.secret_key = str(uuid.uuid4())
