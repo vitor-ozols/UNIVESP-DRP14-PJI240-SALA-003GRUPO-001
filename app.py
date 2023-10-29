@@ -37,9 +37,31 @@ def openai_chat_completion(prompt, temperature):
 def index_html():
     return render_template("index.html")
 
+
 @app.route("/form-html")
 def form_html():
     return render_template("cv_form.html")
+
+
+@app.route("/blog")
+def blog():
+    query_skus = f'''SELECT id, title, image FROM pi_blog ORDER BY datecreated DESC'''
+    cur = mysql.connection.cursor()
+    cur.execute(query_skus)
+    data = cur.fetchall()
+    cur.close()
+    return render_template("blog_itens.html", data=data)
+
+
+@app.route("/publi")
+def publi():
+    id = request.args.get('id')
+    query_skus = f'''SELECT title, content, author, image, datecreated FROM pi_blog WHERE ID = {id}'''
+    cur = mysql.connection.cursor()
+    cur.execute(query_skus)
+    data = cur.fetchone()
+    cur.close()
+    return render_template("publi.html", data=data)
 
 
 @app.route('/get-reccommedations', methods=['POST'])
