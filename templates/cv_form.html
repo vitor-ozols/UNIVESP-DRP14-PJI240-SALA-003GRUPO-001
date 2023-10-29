@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV MAKER</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <img src="{{ url_for('static', filename='images/logo-univesp_simplificado_cor-negativo.png') }}" alt="logo" width="350" height="100">
+                <h1>Gerador de Currículum</h1>
+            </div>
+        </div>
+    </div>
+</header>
+<main class="container mt-4">
+    <section class="categorias">
+        <div class="container">
+            <h1 class="text-center">Preencha o Formulário</h1>
+            <form action="/get-reccommedations" method="POST">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input class="form-control" id="nome" name="nome" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Idade:</label>
+                    <input type="number" class="form-control" id="age" name="age" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="tel">Telefone:</label>
+                    <input type="tel" class="form-control" id="telefone" name="telefone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="school">Escolaridade:</label>
+                    <select class="form-control" id="escolaridade" name="escolaridade" required>
+                        <option value="Ensino Fundamental Cursando">Ensino Fundamental Cursando</option>
+                        <option value="Ensino Fundamental Completo">Ensino Fundamental Completo</option>
+                        <option value="Ensino Médio Cursando">Ensino Médio Cursando</option>
+                        <option value="Ensino Médio Completo">Ensino Médio Completo</option>
+                        <option value="Graduação Cursando">Graduação Cursando</option>
+                        <option value="Graduação Completa">Graduação Completa</option>
+                        <option value="Pós-Graduação Cursando">Pós-Graduação Cursando</option>
+                        <option value="Pós-Graduação Completa">Pós-Graduação Completa</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="institution">Instituição e Curso:</label>
+                    <input class="form-control" id="institution" name="institution" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensagem">Suas Pretensões e Qualificações:</label>
+                    <textarea class="form-control" id="mensagem" name="mensagem" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </section>
+</main>
+<footer class="bg-dark text-white py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h3>Contato</h3>
+                <p>Entre em contato comigo pelo telefone (19) 996258380 ou pelo email contato.divinobasics@gmail.com</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Redes sociais</h3>
+                <ul>
+                    <li><a href="https://wa.me/message/2ANAMSFEO3JWL1">Whatsapp</a></li>
+                    <li><a href="https://instagram.com/divinobasics?igshid=MzRlODBiNWFlZA==">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h3>Sobre a Divino</h3>
+                <p>Acredito que a autoestima da mulher esteja ligada diretamente ao modo que ela se veste, e quero trazer essa beleza pra fora com as peças da Divino</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+    $(document).ready(function() {
+        // Aplica a máscara de entrada para o campo de telefone
+        $('#telefone').inputmask("(99) 99999-9999");
+    });
+</script>
+</body>
+</html>

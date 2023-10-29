@@ -6,7 +6,6 @@
     <title>CV MAKER</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-    <!-- Inclua as bibliotecas jQuery e jQuery Inputmask -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
 </head>
@@ -24,53 +23,10 @@
 <main class="container mt-4">
     <section class="categorias">
         <div class="container">
-            <h1 class="text-center">Preencha o Formulário</h1>
-            <form action="/get-reccommedations" method="POST">
-                <div class="form-group">
-                    <label for="nome">Nome:</label>
-                    <input class="form-control" id="nome" name="nome" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="age">Idade:</label>
-                    <input type="number" class="form-control" id="age" name="age" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">E-mail:</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="tel">Telefone:</label>
-                    <input type="tel" class="form-control" id="telefone" name="telefone" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="school">Escolaridade:</label>
-                    <select class="form-control" id="escolaridade" name="escolaridade" required>
-                        <option value="Ensino Fundamental Cursando">Ensino Fundamental Cursando</option>
-                        <option value="Ensino Fundamental Completo">Ensino Fundamental Completo</option>
-                        <option value="Ensino Médio Cursando">Ensino Médio Cursando</option>
-                        <option value="Ensino Médio Completo">Ensino Médio Completo</option>
-                        <option value="Graduação Cursando">Graduação Cursando</option>
-                        <option value="Graduação Completa">Graduação Completa</option>
-                        <option value="Pós-Graduação Cursando">Pós-Graduação Cursando</option>
-                        <option value="Pós-Graduação Completa">Pós-Graduação Completa</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="institution">Instituição e Curso:</label>
-                    <input class="form-control" id="institution" name="institution" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="mensagem">Suas Pretensões e Qualificações:</label>
-                    <textarea class="form-control" id="mensagem" name="mensagem" required></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-primary">Enviar</button>
+            <h1>O Projeto</h1>
+            <form action="/form-html" method="POST">
+                Este projeto visa demonstrar e analisar as oportunidades e benefícios que as ferramentas digitais podem proporcionar a um grupo de adolescentes periféricos a ingressar no mercado de trabalho. A criação de uma ferramenta para elaborar currículos voltada para jovens de baixa renda enfrenta diversos desafios e possui objetivos cruciais. Primeiramente, esses jovens muitas vezes têm pouca ou nenhuma experiência profissional, tornando a elaboração de currículos desafiadora. Além disso, podem enfrentar dificuldades no acesso à tecnologia e recursos educacionais. Os objetivos principais de uma ferramenta desse tipo incluem capacitar esses jovens a destacar suas habilidades e potencialidades, proporcionando-lhes uma melhor chance de encontrar seu primeiro emprego. Além disso, a ferramenta deve ser acessível e fácil de usar, garantindo que todos os jovens, independentemente de seu nível de conhecimento tecnológico, possam se beneficiar dela. Também é importante fornecer orientação sobre como apresentar experiências não profissionais eficazmente e como adaptar os currículos para diferentes oportunidades de emprego, contribuindo assim para a inclusão social e econômica desses jovens.<br><br>
+            <button type="button" onclick="window.location.href='{{ url_for('form_html') }}'" class="btn btn-primary">Faça seu Currículo</button>
             </form>
         </div>
     </section>

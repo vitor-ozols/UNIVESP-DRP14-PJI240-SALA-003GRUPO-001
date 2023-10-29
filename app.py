@@ -37,6 +37,10 @@ def openai_chat_completion(prompt, temperature):
 def index_html():
     return render_template("index.html")
 
+@app.route("/form-html")
+def form_html():
+    return render_template("cv_form.html")
+
 
 @app.route('/get-reccommedations', methods=['POST'])
 def get_recoommendations():
