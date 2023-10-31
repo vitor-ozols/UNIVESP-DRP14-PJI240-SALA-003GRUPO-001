@@ -5,10 +5,12 @@ body {
   font-family: 'Open Sans Italic', sans-serif;
 }
 
+/* CSS dentro do seu arquivo style.css ou dentro das tags <style> no cabeçalho HTML */
 .responsive-image {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%; /* Garante que a imagem não seja maior que a largura do contêiner pai */
+  height: auto; /* Mantém a proporção de aspecto da imagem */
 }
+
 
 header {
   background-color: #3c3c3c;
