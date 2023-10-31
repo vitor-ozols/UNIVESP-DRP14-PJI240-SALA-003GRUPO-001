@@ -8,6 +8,14 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+    <style>
+        /* Redimensiona os rótulos para que eles não fiquem embaixo dos campos em dispositivos móveis */
+        @media (max-width: 768px) {
+            .form-group label {
+                display: block;
+            }
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -39,7 +47,7 @@
     <section class="categorias">
         <div class="container">
             <h1 class="text-center">Preencha o Formulário</h1>
-            <form action="/get-reccommedations" method="POST">
+            <form action="/get-recommendations" method="POST">
                 <div class="form-group">
                     <label for="nome">Nome:</label>
                     <input class="form-control" id="nome" name="nome" required>
@@ -61,7 +69,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="school">Escolaridade:</label>
+                    <label for="escolaridade">Escolaridade:</label>
                     <select class="form-control" id="escolaridade" name="escolaridade" required>
                         <option value="Ensino Fundamental Cursando">Ensino Fundamental Cursando</option>
                         <option value="Ensino Fundamental Completo">Ensino Fundamental Completo</option>
@@ -97,11 +105,11 @@
                 <p>Entre em contato conosco através dos Emails: 2108487@aluno.univesp.br, 2100530@aluno.univesp.br 2101355@aluno.univesp.br, 2005099@aluno.univesp.br, 2106972@aluno.univesp.br, 2110167@aluno.univesp.br</p>
             </div>
             <div class="col-md-4">
-                <h3>Links Uteis</h3>
+                <h3>Links Úteis</h3>
                 <ul>
                     <li><a href="https://github.com/vitor-ozols/UNIVESP-DRP14-PJI240-SALA-003GRUPO-001">Github</a></li>
                     <li><a href="/blog">Blog</a></li>
-                    <li><a href="/form-html">Blog</a></li>
+                    <li><a href="/form-html">Faça seu Currículo</a></li>
                 </ul>
             </div>
             <div class="col-md-4">
