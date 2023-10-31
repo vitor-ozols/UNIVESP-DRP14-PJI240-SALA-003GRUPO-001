@@ -69,7 +69,7 @@ def publi():
     return render_template("publi.html", data=data)
 
 
-@app.route('/get-reccommedations', methods=['POST'])
+@app.route('/get-recommendations', methods=['POST'])
 def get_recoommendations():
     # Armazenando as variaveis do formulário na sessão
     session['nome'] = request.form.get('nome').title()
