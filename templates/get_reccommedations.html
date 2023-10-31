@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV MAKER</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+    <style>
+      @media (max-width: 576px) {
+        .form-check {
+          display: flex;
+          flex-direction: row-reverse;
+        }
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -18,12 +23,12 @@
       <section class="comp">
         <h1 class="text-center mb-4">Assinale as suas Prováveis Competências:</h1>
         <form action="/cvmaker" method="POST">
-        {% for qualification in qualifications %}
-        <div class="form-check mb-2">
-          <input type="checkbox" class="form-check-input" name="competencias" value="{{ qualification }}" id="competencia{{ loop.index }}">
-          <label class="form-check-label" for="competencia{{ loop.index }}">{{ qualification }}</label>
-        </div>
-        {% endfor %}
+          {% for qualification in qualifications %}
+          <div class="form-check mb-2">
+            <input type="checkbox" class="form-check-input" name="competencias" value="{{ qualification }}" id="competencia{{ loop.index }}">
+            <label class="form-check-label" for="competencia{{ loop.index }}">{{ qualification }}</label>
+          </div>
+          {% endfor %}
           <button type="submit" class="btn btn-primary mt-4">Enviar</button>
         </form>
       </section>
