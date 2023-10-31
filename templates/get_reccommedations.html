@@ -18,12 +18,12 @@
       <section class="comp">
         <h1 class="text-center mb-4">Assinale as suas Prováveis Competências:</h1>
         <form action="/cvmaker" method="POST">
-          {% for qualification in qualifications %}
-          <div class="form-check mb-2">
-            <input type="checkbox" class="form-check-input" name="competencias" value="{{ qualification }}" id="competencia{{ loop.index }}">
-            <label class="form-check-label" for="competencia{{ loop.index }}">{{ qualification }}</label>
-          </div>
-          {% endfor %}
+        {% for qualification in qualifications %}
+        <div class="form-check mb-2">
+          <input type="checkbox" class="form-check-input" name="competencias" value="{{ qualification }}" id="competencia{{ loop.index }}">
+          <label class="form-check-label" for="competencia{{ loop.index }}">{{ qualification }}</label>
+        </div>
+        {% endfor %}
           <button type="submit" class="btn btn-primary mt-4">Enviar</button>
         </form>
       </section>
