@@ -23,7 +23,7 @@
                                 <a class="nav-link" href="/">Página Inicial</a>
                             </li>
                             <li class="nav-item">
-                                <a class a="nav-link" href="/blog">Blog</a>
+                                <a class="nav-link" href="/blog">Blog</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/form-html">Faça seu Currículo</a>
@@ -42,7 +42,7 @@
       <div class="sku">
         <h3><br><br>{{ sku[1] }}<br><br></h3>
         <a href="{{ url_for('publi', id=sku[0]) }}">
-          <img class="responsive-image" src="{{ 'static/blog/' + sku[2] }}" alt="{{ sku[1 }}">
+          <img src="{{ 'static/blog/' + sku[2] }}" alt="{{ sku[1] }}" width="250">
         </a>
       </div>
       {% endfor %}
