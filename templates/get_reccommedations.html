@@ -1,56 +1,57 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV MAKER</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
-</head>
-<body>
-  <header>
-    <img src="{{ url_for('static', filename='images/logo-univesp_simplificado_cor-negativo.png') }}" alt="logo" width="350" height="100">
-    <h1>Gerador de Currículo</h1>
-  </header>
-  <main class="container mt-4">
-    <section class="comp">
-      <h1 class="text-center mb-4">Assinale as suas Prováveis Competências:</h1>
-      <form action="/cvmaker" method="POST">
-        {% for qualification in qualifications %}
-        <div class="form-check mb-2 form-check-inline">
-          <input type="checkbox" class="form-check-input" name="competencias" value="{{ qualification }}" id="competencia{{ loop.index }}">
-          <label class="form-check-label" for="competencia{{ loop.index }}">{{ qualification }}</label>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV MAKER</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <img src="{{ url_for('static', filename='images/logo-univesp_simplificado_cor-negativo.png') }}" alt="logo" width="350" height="100">
+      <h1>Gerador de Currículo</h1>
+    </header>
+    <main class="container mt-4">
+      <section class="comp">
+        <h1 class="text-center mb-4">Assinale as suas Prováveis Competências:</h1>
+        <form action="/cvmaker" method="POST">
+          {% for qualification in qualifications %}
+          <div class="form-check mb-2">
+            <input type="checkbox" class="form-check-input" name="competencias" value="{{ qualification }}" id="competencia{{ loop.index }}">
+            <label class="form-check-label" for="competencia{{ loop.index }}">{{ qualification }}</label>
+          </div>
+          {% endfor %}
+          <button type="submit" class="btn btn-primary mt-4">Enviar</button>
+        </form>
+      </section>
+    </main>
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Contato</h3>
+                    <p>Entre em contato conosco através dos Emails: 2108487@aluno.univesp.br, 2100530@aluno.univesp.br 2101355@aluno.univesp.br, 2005099@aluno.univesp.br, 2106972@aluno.univesp.br, 2110167@aluno.univesp.br</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Links Uteis</h3>
+                    <ul>
+                        <li><a href="https://github.com/vitor-ozols/UNIVESP-DRP14-PJI240-SALA-003GRUPO-001">Github</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/form-html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3>Sobre Nós</h3>
+                    <p>Juntos, capacitando jovens periféricos para construir um futuro brilhante no mercado de trabalho.</p>
+                </div>
+            </div>
         </div>
-        {% endfor %}
-        <button type="submit" class="btn btn-primary mt-4">Enviar</button>
-      </form>
-    </section>
-  </main>
-  <footer class="bg-dark text-white py-4">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <h3>Contato</h3>
-          <p>Entre em contato conosco através dos Emails: 2108487@aluno.univesp.br, 2100530@aluno.univesp.br, 2101355@aluno.univesp.br, 2005099@aluno.univesp.br, 2106972@aluno.univesp.br, 2110167@aluno.univesp.br</p>
-        </div>
-        <div class="col-md-4">
-          <h3>Links Úteis</h3>
-          <ul>
-            <li><a href="https://github.com/vitor-ozols/UNIVESP-DRP14-PJI240-SALA-003GRUPO-001">Github</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/form-html">Formulário HTML</a></li>
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <h3>Sobre Nós</h3>
-          <p>Juntos, capacitando jovens periféricos para construir um futuro brilhante no mercado de trabalho.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <script></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+    </footer>
+    <script>
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
 </html>
