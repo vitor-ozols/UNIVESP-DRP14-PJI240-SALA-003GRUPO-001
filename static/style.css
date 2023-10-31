@@ -5,6 +5,11 @@ body {
   font-family: 'Open Sans Italic', sans-serif;
 }
 
+.responsive-image {
+    max-width: 100%;
+    height: auto;
+}
+
 header {
   background-color: #3c3c3c;
   color: #ffffff;
