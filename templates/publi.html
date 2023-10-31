@@ -23,7 +23,7 @@
                                 <a class="nav-link" href="/">Página Inicial</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/blog">Blog</a>
+                                <a class a="nav-link" href="/blog">Blog</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/form-html">Faça seu Currículo</a>
@@ -39,7 +39,7 @@
     <section class="publi-details">
       <div class="product-image">
         <h2>{{ data[0] }}</h2>
-        <img src="{{ 'static/blog/' + data[3] }}" alt="{{ data[1] }}" width="600">
+        <img class="responsive-image" src="{{ 'static/blog/' + data[3] }}" alt="{{ data[1] }}">
       </div>
       <div class="description">
         <p>{{ data[1] | safe }}</p>
