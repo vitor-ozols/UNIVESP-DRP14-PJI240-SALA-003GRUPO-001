@@ -15,22 +15,22 @@
     <h1>Gerador de Currículo</h1>
   </header>
   <main class="container mt-4">
-    <section class="comp">
-      <h1 class="text-center mb-4">Assinale as suas Prováveis Competências:</h1>
-      <form action="/cvmaker" method="POST">
-        <div class="row">
-          {% for qualification in qualifications %}
-          <div class="col-md-6">
-            <div class="form-check mb-2">
-              <input type="checkbox" class="form-check-input" name="competencias" value="{{ qualification }}" id="competencia{{ loop.index }}">
-              <label class="form-check-label" for="competencia{{ loop.index }}">{{ qualification }}</label>
-            </div>
+  <section class="comp">
+    <h1 class="mb-4">Assinale as suas Prováveis Competências:</h1>
+    <form action="/cvmaker" method="POST">
+      <div class="row">
+        {% for qualification in qualifications %}
+        <div class="col-md-6">
+          <div class="form-check mb-2 text-left">
+            <input type="checkbox" class="form-check-input" name="competencias" value="{{ qualification }}" id="competencia{{ loop.index }}">
+            <label class="form-check-label" for="competencia{{ loop.index }}">{{ qualification }}</label>
           </div>
-          {% endfor %}
         </div>
-        <button type="submit" class="btn btn-primary mt-4">Enviar</button>
-      </form>
-    </section>
+        {% endfor %}
+      </div>
+      <button type="submit" class="btn btn-primary mt-4">Enviar</button>
+    </form>
+  </section>
   </main>
   <footer class="bg-dark text-white py-4">
     <div class="container">
