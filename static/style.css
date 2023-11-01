@@ -20,10 +20,6 @@ body {
   .form-check .form-check-label {
     order: -1;
   }
-
-  .form-check .form-check-input {
-    float: left;
-  }
 }
 
 
