@@ -17,6 +17,7 @@ body {
     align-items: flex-start;
     margin-right: 0;
     margin-left: 1rem;
+    width: 100%;
   }
 
   .form-check .form-check-label {
@@ -27,6 +28,7 @@ body {
     float: left;
   }
 }
+
 
 
 header {
