@@ -16,14 +16,14 @@
   </header>
   <main class="container mt-4">
   <section class="comp">
-    <h1 class="mb-4">Assinale as suas Prováveis Competências:</h1>
+    <h1 class="text-center mb-4">Assinale as suas Prováveis Competências:</h1>
     <form action="/cvmaker" method="POST">
       <div class="row">
         {% for qualification in qualifications %}
         <div class="col-md-6">
-          <div class="form-check mb-2 text-left">
+          <div class="form-check mb-2">
             <input type="checkbox" class="form-check-input" name="competencias" value="{{ qualification }}" id="competencia{{ loop.index }}">
-            <label class="form-check-label" for="competencia{{ loop.index }}">{{ qualification }}</label>
+            <label class="form-check-label text-left" for="competencia{{ loop.index }}">{{ qualification }}</label>
           </div>
         </div>
         {% endfor %}
