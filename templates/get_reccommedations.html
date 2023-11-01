@@ -22,8 +22,8 @@
         {% for qualification in qualifications %}
         <div class="col-md-6">
           <div class="form-check mb-2">
-            <input type="checkbox" class="form-check-input" name="competencias" value="{{ qualification }}" id="competencia{{ loop.index }}">
             <label class="form-check-label text-left" for="competencia{{ loop.index }}">{{ qualification }}</label>
+            <input type="checkbox" class="form-check-input" name="competencias" value="{{ qualification }}" id="competencia{{ loop.index }}">
           </div>
         </div>
         {% endfor %}
