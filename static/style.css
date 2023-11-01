@@ -10,6 +10,22 @@ body {
   height: auto;
 }
 
+@media (max-width: 576px) {
+  .form-check {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 0;
+  }
+
+  .form-check .form-check-label {
+    order: -1;
+  }
+
+  .form-check .form-check-input {
+    float: left;
+  }
+}
+
 
 header {
   background-color: #3c3c3c;
